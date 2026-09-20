@@ -1,0 +1,35 @@
+{
+  "name": "dsh-tab-title",
+  "version": "0.3.1",
+  "description": "Browser-half DSH plugin: pins the web GUI tab title to a constant string, overriding the per-session chat title.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "sessions",
+        "uiSession"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.0",
+    "esbuild": "^0.25.0",
+    "happy-dom": "^18.0.1",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  },
+  "license": "MIT"
+}

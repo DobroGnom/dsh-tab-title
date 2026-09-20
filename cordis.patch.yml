@@ -1,0 +1,8 @@
+# dsh-tab-title bundle patch: inserts a browser-only plugin row into the web
+# profile roster, mirroring the dsh-skill-hub pattern (`dsh.bundle.patch`
+# manifest field). The node half is an empty seat; the `dsh.client`
+# declaration in package.json makes the browser half (exports "./client",
+# served at /plugins/<id>/client.js) load in the web GUI.
+- insert:
+    - id: tab-title
+      name: 'dsh-tab-title'
